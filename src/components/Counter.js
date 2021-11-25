@@ -32,4 +32,4 @@ class Counter extends React.Component {
     
 }
 
-export default Counter;
+export default React.memo(Counter);

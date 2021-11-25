@@ -17,4 +17,4 @@ class ShowLoad extends React.Component {
     }
 }
 
-export default ShowLoad;
+export default React.memo(ShowLoad);

@@ -1,8 +1,5 @@
 import React from 'react';
 class CounterMsg extends React.Component {
-    constructor(props) {
-        super(props)   
-    }
     render() {
         return (
             <p className="text-left">
@@ -13,4 +10,4 @@ class CounterMsg extends React.Component {
     
 }
 
-export default CounterMsg;
+export default React.memo(CounterMsg);
