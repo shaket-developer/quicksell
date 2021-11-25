@@ -1,8 +1,5 @@
 import React from 'react';
 class Counter extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     calculateCounter(operation, value) {
         const {maxValue, counter} = this.props.counterState;
         let updatedValue;
