@@ -1,7 +1,6 @@
 import React from 'react';
 class Counter extends React.Component {
     constructor(props) {
-        console.log("Counter called");
         super(props);
     }
     calculateCounter(operation, value) {

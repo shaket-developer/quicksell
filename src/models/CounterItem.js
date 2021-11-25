@@ -36,13 +36,12 @@ export default class CounterItem extends React.Component {
             cancelToken: this.requestToken.token,
             }).then(
             (res) => console.log(res)
-        ).finally(() => this.setState({isSaving: false}))
+        ).catch(error => console.log(error)).finally(() => this.setState({isSaving: false}))
     }
 
     componentDidMount() {
         axios.get(`https://interview-8e4c5-default-rtdb.firebaseio.com/front-end/counter1.json`)
         .then(response => {
-            console.log(this.props.counterState);
             if(response.data !== null) {
                 this.setCounter(response.data)
             }
