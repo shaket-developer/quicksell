@@ -5,25 +5,27 @@ class Counter extends React.Component {
         super(props);
     }
     calculateCounter(operation, value) {
-        
-        if((operation === 'CHANGE' && value <= 1000) || (operation === 'ADD' && value < 1000) || operation === 'SUBTRACT') {
-            if (operation === 'ADD') {
-                this.props.setCounter(this.props.counterState.counter + value, this.props.saveCounter);
-            } else if (operation === 'SUBTRACT') {
-                this.props.setCounter(this.props.counterState.counter - value, this.props.saveCounter);
-            } else if (operation === 'CHANGE') {
-                this.props.setCounter(Number(value), this.props.saveCounter);
-            }
+        const {maxValue, counter} = this.props.counterState;
+        let updatedValue;
+        if (operation === 'ADD') {
+            updatedValue = counter + value;
+        } else if (operation === 'SUBTRACT') {
+            updatedValue = counter - value;
+        } else if (operation === 'CHANGE') {
+            updatedValue = Number(value)
+        }
+        if(updatedValue <= maxValue) {
+            this.props.setCounter(updatedValue, this.props.saveCounter);
         }
     }
 
     render() {
-        
+        const addButtonClass = ((this.props.counterState.maxValue - this.props.counterState.counter) === 0 ) ? 'disabled' : '';
         return (
             <div className = "counterUpdate d-flex m-auto">
-            <button onClick = {() => this.calculateCounter('SUBTRACT', 1)}>-</button>
+            <button onClick = {() => this.calculateCounter('SUBTRACT', 1)} >-</button>
             <input type="text" value={this.props.counterState.counter} onChange={(e) => this.calculateCounter('CHANGE', e.target.value)} />
-            <button onClick = {() => this.calculateCounter('ADD', 1)}>+</button>
+            <button onClick = {() => this.calculateCounter('ADD', 1)} className = {addButtonClass}>+</button>
             </div> 
         )
     }

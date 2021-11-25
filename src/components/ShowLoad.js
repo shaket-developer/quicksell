@@ -8,7 +8,7 @@ class ShowLoad extends React.Component {
         }
     }
     render() {
-        const text = this.props.saving ? <p className="text-left"><img src={logo} class="img-xs"/> &nbsp; Saving counter value</p>: <p className="text-left">Auto Saving is ON</p>
+        const text = this.props.saving ? <p className="text-left"><img src={logo} className="img-xs"/> &nbsp; Saving counter value</p>: <p className="text-left">Auto Saving is ON</p>
         return (
             <>
             {text}

@@ -16,7 +16,6 @@ export default class CounterItem extends React.Component {
     }
 
     setCounter(value, callback) {
-        console.log(typeof callback);
         if(value <= this.state.maxValue) {
             this.setState({counter: value}, () => {
                 if(typeof callback === 'function') {

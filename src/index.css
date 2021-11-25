@@ -45,8 +45,12 @@ button {
   color: var(--dark-maroon);
   border:0px;
 }
+.disabled:hover {
+  cursor: not-allowed;
+}
 button:hover {
   background: var(--dark-maroon);
+  cursor: pointer;
 }
 .counter button, .counter input {
   font-size:21px;
