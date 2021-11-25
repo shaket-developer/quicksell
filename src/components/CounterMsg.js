@@ -1,9 +1,7 @@
 import React from 'react';
-import CounterItem from '../models/CounterItem';
 class CounterMsg extends React.Component {
     constructor(props) {
-        super(props)
-        
+        super(props)   
     }
     render() {
         return (

@@ -3,9 +3,6 @@ import React from 'react';
 import CounterItem from './models/CounterItem';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render () {
     return (
       <div className="App">
